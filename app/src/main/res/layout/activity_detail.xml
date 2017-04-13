@@ -25,17 +25,22 @@
 
         <ImageView
             android:id="@+id/detail_poster_iv"
-            android:layout_weight="0.5"
+            android:layout_weight="0.4"
             android:background="@drawable/poster1"
             android:layout_width="0dp"
-            android:layout_gravity="center_horizontal"
+            android:paddingLeft="10dp"
+            android:gravity="left"
             android:layout_height="wrap_content" />
 
+        <View
+            android:layout_weight="0.2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"/>
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_gravity="center_horizontal"
+            android:layout_weight="0.4"
+            android:gravity="center_horizontal|left"
             android:orientation="vertical">
 
             <TextView
@@ -71,6 +76,7 @@
 
     </LinearLayout>
     <TextView
+        android:padding="10dp"
         android:id="@+id/detail_movie_description"
         android:text="@string/lorem"
         android:layout_width="match_parent"
@@ -81,6 +87,7 @@
         android:layout_height="1dp"
         android:background="#004D40"/>
     <LinearLayout
+        android:padding="16dp"
         android:orientation="vertical"
         android:layout_weight="0.2"
         android:layout_width="match_parent"
@@ -97,6 +104,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <Button
+                    android:background="@drawable/ic_play_arrow_black_24px"
                     android:id="@+id/trailer_play_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
