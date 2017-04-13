@@ -1,16 +1,32 @@
 package com.annamorgiel.popular_movies;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements MovieAdapter.GridItemClickListener{
+    private static final int NUM_GRID_ITEM = 100;
+    private MovieAdapter mAdapter;
+    private RecyclerView mMoviesGrid;
+    Context context = MainActivity.this;
+    Class detailActivity = DetailActivity.class;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        mMoviesGrid = (RecyclerView) findViewById(R.id.rv_movies);
+        GridLayoutManager layoutManager = new GridLayoutManager(context);
+        mMoviesGrid.setLayoutManager(layoutManager);
+        //todo
+        //mMoviesGrid.hasFixedSize(true);
+        mAdapter = new MovieAdapter(NUM_GRID_ITEM, this);
+        mMoviesGrid.setAdapter(mAdapter);
     }
 
     @Override
@@ -27,11 +43,20 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        switch (id){
+            case R.id.action_settings:
+                mAdapter = new MovieAdapter(NUM_GRID_ITEM,this);
+                mMoviesGrid.setAdapter(mAdapter);
+                return true;
 
+        }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onGridItemClick(int clickedItemIndex) {
+        Intent startChildActivityIntent = new Intent(context, detailActivity);
+        startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, clickedItemIndex);
+        startActivity(startChildActivityIntent);
     }
 }

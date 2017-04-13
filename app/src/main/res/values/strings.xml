@@ -2,4 +2,6 @@
     <string name="app_name">Popular_Movies</string>
     <string name="action_settings">settings</string>
     <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor convallis ex. Phasellus in velit at ipsum pharetra commodo</string>
+    <string name="error_message">error</string>
+    <string name="detail_activity_display_message">Movie Detail</string>
 </resources>
