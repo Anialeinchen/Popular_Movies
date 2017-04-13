@@ -26,7 +26,7 @@
         <ImageView
             android:id="@+id/detail_poster_iv"
             android:layout_weight="0.5"
-            android:background="@mipmap/ic_launcher"
+            android:background="@drawable/poster1"
             android:layout_width="0dp"
             android:layout_gravity="center_horizontal"
             android:layout_height="wrap_content" />
@@ -49,6 +49,7 @@
                 android:padding="4dp"
                 android:id="@+id/detail_movie_length_tv"
                 android:layout_width="wrap_content"
+                android:textStyle="italic"
                 android:layout_height="wrap_content"
                 android:text="90min" />
 
