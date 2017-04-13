@@ -7,6 +7,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.squareup.picasso.Picasso;
+
+import java.net.URL;
+
 /**
  * Created by Anna Morgiel on 13.04.2017.
  */
@@ -16,6 +20,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     private static final String TAG = MovieAdapter.class.getSimpleName();
 
     final private GridItemClickListener mOnClickListener;
+    Context context = DetailActivity.this;
 
     private static int viewHolderCount;
 
@@ -30,7 +35,6 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         viewHolderCount = 0;
     }
 
-
     @Override
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
@@ -39,13 +43,26 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         boolean shouldAttachToParentImmidiately = false;
         View view = inflater.inflate(layoutIdForGridItem,parent, shouldAttachToParentImmidiately);
         MovieViewHolder holder = new MovieViewHolder(view);
-        holder.ind
+        //todo fix
+        //
+        viewHolderCount++;
+        return holder;
+    }
 
+    @Override
+    public void onBindViewHolder(MovieViewHolder holder, int position) {
+        //log?
+        holder.bind(position);
+    }
+
+    @Override
+    public int getItemCount() {
+        return viewHolderCount;
     }
 
     class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView gridItemPosterView;
-
+        String url = "http://i.imgur.com/DvpvklR.png";
 
         public MovieViewHolder(View itemView) {
             super(itemView);
@@ -56,16 +73,10 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         itemView.setOnClickListener(this);
         }
 
-// TODO: 13.04.2017
+        // TODO: 13.04.2017
         void bind(int listIndex) {
-            gridItemPosterView.setImageDrawable();}
+            Picasso.with(context).load(url).into(gridItemPosterView);}
 
-
-        // COMPLETED (6) Override onClick, passing the clicked item's position (getAdapterPosition()) to mOnClickListener via its onListItemClick method
-        /**
-         * Called whenever a user clicks on an item in the list.
-         * @param v The View that was clicked
-         */
         @Override
         public void onClick(View v) {
             int clickedPosition = getAdapterPosition();
