@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/detail_movie_title"
+        android:background="#80CBC4"
+        android:text="Chappie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/detail_poster_iv"
+            android:layout_weight="1"
+            android:background="@mipmap/ic_launcher"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/detail_release_date_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2015" />
+
+            <TextView
+                android:id="@+id/detail_movie_length_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="90min" />
+
+            <TextView
+                android:id="@+id/rdetail_anking_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7.2/10" />
+
+            <Button
+                android:id="@+id/detail_favorites_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="mark as favorite" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#004D40"/>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"></ScrollView>
 
 </LinearLayout>
