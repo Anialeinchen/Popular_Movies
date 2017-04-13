@@ -30,6 +30,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         viewHolderCount = 0;
     }
 
+
     @Override
     public MovieViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
