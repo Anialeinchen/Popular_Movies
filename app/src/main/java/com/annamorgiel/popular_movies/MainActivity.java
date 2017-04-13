@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Grid
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mMoviesGrid = (RecyclerView) findViewById(R.id.rv_movies);
-        GridLayoutManager layoutManager = new GridLayoutManager(context);
+        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         mMoviesGrid.setLayoutManager(layoutManager);
         //todo
         //mMoviesGrid.hasFixedSize(true);

@@ -9,8 +9,6 @@ import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 
-import java.net.URL;
-
 /**
  * Created by Anna Morgiel on 13.04.2017.
  */
@@ -20,7 +18,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     private static final String TAG = MovieAdapter.class.getSimpleName();
 
     final private GridItemClickListener mOnClickListener;
-    Context context = DetailActivity.this;
+
 
     private static int viewHolderCount;
 
@@ -63,6 +61,12 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
     class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView gridItemPosterView;
         String url = "http://i.imgur.com/DvpvklR.png";
+
+        public Context getContext() {
+            return context;
+        }
+
+        Context context = getContext() ;
 
         public MovieViewHolder(View itemView) {
             super(itemView);
