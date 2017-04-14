@@ -1,4 +1,4 @@
-package com.annamorgiel.popular_movies;
+package com.annamorgiel.popular_movies.ui.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,7 +9,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends AppCompatActivity implements MovieAdapter.GridItemClickListener{
+import com.annamorgiel.popular_movies.MovieAdapter;
+import com.annamorgiel.popular_movies.R;
+
+public class MainActivity extends AppCompatActivity implements MovieAdapter.GridItemClickListener {
     private static final int NUM_GRID_ITEM = 100;
     private MovieAdapter mAdapter;
     private RecyclerView mMoviesGrid;

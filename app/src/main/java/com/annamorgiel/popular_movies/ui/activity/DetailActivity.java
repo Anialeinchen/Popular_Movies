@@ -1,8 +1,10 @@
-package com.annamorgiel.popular_movies;
+package com.annamorgiel.popular_movies.ui.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+
+import com.annamorgiel.popular_movies.R;
 
 /**
  * Created by Anna Morgiel on 13.04.2017.

@@ -11,19 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.annamorgiel.popular_movies.DetailActivity"
+        <activity android:name="com.annamorgiel.popular_movies.ui.activity.DetailActivity"
                 android:label="@string/detail_activity_display_message"
-            android:parentActivityName=".MainActivity">
+            android:parentActivityName=".ui.activity.MainActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".ui.activity.MainActivity"/>
         </activity>
     </application>
 
