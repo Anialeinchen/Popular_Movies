@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Grid
     @Override
     public void onGridItemClick(int clickedItemIndex) {
         Intent startChildActivityIntent = new Intent(context, detailActivity);
+        //todo to string??
         startChildActivityIntent.putExtra(Intent.EXTRA_TEXT, clickedItemIndex);
         startActivity(startChildActivityIntent);
     }
