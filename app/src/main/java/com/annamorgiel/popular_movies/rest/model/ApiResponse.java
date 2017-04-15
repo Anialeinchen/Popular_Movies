@@ -1,6 +1,7 @@
 package com.annamorgiel.popular_movies.rest.model;
 
 
+import com.annamorgiel.popular_movies.model.PosterPath;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;

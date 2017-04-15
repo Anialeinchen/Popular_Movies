@@ -1,5 +1,8 @@
 package com.annamorgiel.popular_movies.rest.service;
 
+import com.annamorgiel.popular_movies.rest.model.ApiResponse;
+
+import retrofit2.Callback;
 import retrofit2.http.GET;
 import retrofit2.http.Query;
 
