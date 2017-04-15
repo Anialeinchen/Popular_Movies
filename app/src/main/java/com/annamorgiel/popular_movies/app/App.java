@@ -2,7 +2,7 @@ package com.annamorgiel.popular_movies.app;
 
 import android.app.Application;
 
-import com.annamorgiel.popular_movies.rest.service.RestClient;
+import com.annamorgiel.popular_movies.rest.RestClient;
 
 /**
  * Created by Anna Morgiel on 14.04.2017.

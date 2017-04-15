@@ -1,4 +1,4 @@
-package com.annamorgiel.popular_movies.rest.service;
+package com.annamorgiel.popular_movies.rest;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;

@@ -1,5 +1,6 @@
-package com.annamorgiel.popular_movies.rest.service;
+package com.annamorgiel.popular_movies.rest;
 
+import com.annamorgiel.popular_movies.rest.service.MovieService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
