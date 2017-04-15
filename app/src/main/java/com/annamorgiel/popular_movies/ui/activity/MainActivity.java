@@ -13,6 +13,7 @@ import com.annamorgiel.popular_movies.MovieAdapter;
 import com.annamorgiel.popular_movies.R;
 
 public class MainActivity extends AppCompatActivity implements MovieAdapter.GridItemClickListener {
+
     private static final int NUM_GRID_ITEM = 100;
     private MovieAdapter mAdapter;
     private RecyclerView mMoviesGrid;
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Grid
         mMoviesGrid = (RecyclerView) findViewById(R.id.rv_movies);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         mMoviesGrid.setLayoutManager(layoutManager);
-        //todo
         //mMoviesGrid.hasFixedSize(true);
         mAdapter = new MovieAdapter(NUM_GRID_ITEM, this);
         mMoviesGrid.setAdapter(mAdapter);
@@ -45,12 +45,18 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Grid
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+//todo add change by popularity, by ranking
         switch (id){
-            case R.id.action_settings:
+            case R.id.sort_by_popularity:
                 mAdapter = new MovieAdapter(NUM_GRID_ITEM,this);
                 mMoviesGrid.setAdapter(mAdapter);
                 return true;
+
+            case R.id.sort_by_ranking:
+                mAdapter = new MovieAdapter(NUM_GRID_ITEM,this);
+                mMoviesGrid.setAdapter(mAdapter);
+                return true;
+
 
         }
         return super.onOptionsItemSelected(item);

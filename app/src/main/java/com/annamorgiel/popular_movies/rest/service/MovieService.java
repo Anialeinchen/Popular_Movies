@@ -4,6 +4,7 @@ import com.annamorgiel.popular_movies.rest.model.ApiResponse;
 
 import retrofit2.Callback;
 import retrofit2.http.GET;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -12,9 +13,10 @@ import retrofit2.http.Query;
 public interface MovieService {
 
     //request data from the endpoints
-    @GET("/movie/popular")
-    public void getPopularMovies(@Query("q") String name, Callback<ApiResponse> callback);
-
-    @GET("/movie/top_rated")
-    public void getPopularMovies(@Query("q") String name, Callback<ApiResponse> callback);
+    @GET("/{id}/movie/popular")
+    public void getPopularMovies(@Path("id") Integer id, @Query("q") String name, Callback<ApiResponse> callback);
+/*
+    @GET("/{id}/movie/top_rated")
+    public void getPopularMovies(@Path("id") Integer id, @Query("q") String name, Callback<ApiResponse> callback);
+*/
 }

@@ -3,7 +3,6 @@ package com.annamorgiel.popular_movies.model;
 import com.google.gson.annotations.SerializedName;
 
 import org.parceler.Parcel;
-import java.io.Serializable;
 
 /**
  * Created by Anna Morgiel on 14.04.2017.
@@ -11,8 +10,8 @@ import java.io.Serializable;
 @Parcel
 public class PosterPath {
     @SerializedName("poster_path")
-    private String poster_path;
+    private String posterPath;
 
     public String getPosterPath(){return posterPath;}
-    public void setPosterPath(String posterPath){ this.poster_path = posterPath;}
+    public void setPosterPath(String posterPath){ this.posterPath = posterPath;}
 }
