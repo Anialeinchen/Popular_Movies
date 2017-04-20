@@ -1,8 +1,6 @@
 package com.annamorgiel.popular_movies.rest;
 
 import com.annamorgiel.popular_movies.rest.service.MovieService;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -10,22 +8,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by Anna Morgiel on 15.04.2017.
  */
-
+//todo add api key add sortby add restclient
 public class RestClient {
-    private static final String BASE_URL = "http://api.themoviedb.org";
+    private static final String BASE_URL = "http://api.themoviedb.org/3";
     private MovieService apiService;
 
-    public RestClient()
-    {
-        Gson gson = new GsonBuilder()
-                .registerTypeAdapterFactory(new ItemTypeAdapterFactory())
-                .create();
 
-       /* RestAdapter restAdapter = new RestAdapter.Builder()
-                .setLogLevel(RestAdapter.LogLevel.FULL)
-                .setEndpoint(BASE_URL)
-                .setConverter(new GsonConverter(gson))
-                .build(); */
+    public RestClient(){
+
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)

@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.annamorgiel.popular_movies.ui.activity.DetailActivity"
+        <activity android:name="ui.activity.DetailActivity"
                 android:label="@string/detail_activity_display_message"
             android:parentActivityName=".ui.activity.MainActivity">
             <meta-data
@@ -26,5 +26,4 @@
                 android:value=".ui.activity.MainActivity"/>
         </activity>
     </application>
-
 </manifest>

@@ -1,9 +1,24 @@
 package com.annamorgiel.popular_movies.ui.activity;
 
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.widget.ImageView;
+
+import com.annamorgiel.popular_movies.R;
+import com.annamorgiel.popular_movies.app.App;
+import com.annamorgiel.popular_movies.rest.model.ApiResponse;
+import com.squareup.picasso.Picasso;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 /**
  * Created by Anna Morgiel on 13.04.2017.
  */
-/*
+
 public class DetailActivity extends AppCompatActivity {
     Integer clickedItemId = null;
     String BASE_POSTER_URL = "http://image.tmdb.org/t/p/w185//";
@@ -20,13 +35,14 @@ public class DetailActivity extends AppCompatActivity {
         //clickedItemId = clickedItemIndex.getId?
             //todo dummy id
         clickedItemId = 22;
-        App.getRestClient().getMovieService().getPopularMovies(clickedItemId, new Callback<ApiResponse>()
+        App.getRestClient().getMovieService().getMovies(clickedItemId, new Callback<ApiResponse>()
         {
-            @Override
+           /* @Override
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
                 if (!response.isSuccessful())
                 {
-                    Picasso.with(DetailActivity.this).load(BASE_POSTER_URL + response.body().posterPath().getPosterPath()).into(poster_iv);
+                    //String poster_path_endpoint_detail  = response.body().getMovies();
+                    //Picasso.with(DetailActivity.this).load(BASE_POSTER_URL + ).into(poster_iv);
                 }
             }
 
@@ -38,4 +54,3 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 }
-*/
