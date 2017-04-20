@@ -23,6 +23,7 @@ public class RestClient {
         apiService = retrofit.create(MovieService.class);
     }
 
+
     public MovieService getMovieService()
     {
         return apiService;

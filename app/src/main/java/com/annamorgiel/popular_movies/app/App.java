@@ -15,12 +15,11 @@ public class App extends Application {
     public void onCreate()
     {
         super.onCreate();
-
-        restClient = new RestClient();
     }
 
     public static RestClient getRestClient()
     {
+        restClient = new RestClient();
         return restClient;
     }
 
