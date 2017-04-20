@@ -20,18 +20,13 @@ import java.util.ListIterator;
  * Created by Anna Morgiel on 13.04.2017.
  */
 
-public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder>{
+public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHolder> {
 
     private static final String TAG = MovieAdapter.class.getSimpleName();
 
-    final private GridItemClickListener mOnClickListener;
-
-    String moviePosterPath;
-
     private List<Movie> movieList;
 
-    String url = "http://image.tmdb.org/t/p/w185/";
-
+    final private GridItemClickListener mOnClickListener;
 
     public interface GridItemClickListener {
         void onGridItemClick(int clickedItemIndex);
@@ -163,8 +158,35 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         mOnClickListener = listener;
     }
 
-    public void setMovieList(List<Movie> movies){
+    public void setMovieList(List<Movie> movies) {
         movieList = movies;
+    }
+
+
+    class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        public final ImageView posterImageView;
+
+        Context context = getContext();
+
+        public MovieViewHolder(View itemView) {
+            super(itemView);
+            posterImageView = (ImageView) itemView.findViewById(R.id.poster_iv);
+            itemView.setOnClickListener(this);
+        }
+
+        public Context getContext() {
+            return context;
+        }
+
+        // TODO: 13.04.2017
+        // void bind(int listIndex) {
+        //   Picasso.with(context).load(url).into(gridItemPosterView);}
+
+        @Override
+        public void onClick(View v) {
+            int clickedPosition = getAdapterPosition();
+            mOnClickListener.onGridItemClick(clickedPosition);
+        }
     }
 
     @Override
@@ -173,7 +195,8 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         int layoutIdForGridItem = R.layout.grid_item_view;
         LayoutInflater inflater = LayoutInflater.from(context);
         boolean shouldAttachToParentImmidiately = false;
-        View view = inflater.inflate(layoutIdForGridItem,parent, shouldAttachToParentImmidiately);
+
+        View view = inflater.inflate(layoutIdForGridItem, parent, shouldAttachToParentImmidiately);
         MovieViewHolder holder = new MovieViewHolder(view);
 
         return holder;
@@ -184,41 +207,14 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         ImageView gridItemPosterView;
         gridItemPosterView = (ImageView) holder.itemView.findViewById(R.id.poster_iv);
         Movie movie = movieList.get(position);
-        moviePosterPath = movie.getPosterPath();
+        String moviePosterPath = movie.getPosterPath();
+        String url = "http://image.tmdb.org/t/p/w185/";
         Picasso.with(holder.getContext()).load(url + moviePosterPath).into(gridItemPosterView);
     }
-
 
     @Override
     public int getItemCount() {
         return movieList.size();
     }
 
-    class MovieViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-
-        public Context getContext() {
-            return context;
-        }
-
-        Context context = getContext() ;
-
-        public MovieViewHolder(View itemView) {
-            super(itemView);
-
-
-        // COMPLETED (7) Call setOnClickListener on the View passed into the constructor (use 'this' as the OnClickListener)
-        itemView.setOnClickListener(this);
-        }
-
-        // TODO: 13.04.2017
-       // void bind(int listIndex) {
-         //   Picasso.with(context).load(url).into(gridItemPosterView);}
-
-        @Override
-        public void onClick(View v) {
-            int clickedPosition = getAdapterPosition();
-            mOnClickListener.onGridItemClick(clickedPosition);
-        }
-    }
 }
