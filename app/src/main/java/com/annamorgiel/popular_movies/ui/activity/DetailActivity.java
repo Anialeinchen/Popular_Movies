@@ -6,14 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
 
 import com.annamorgiel.popular_movies.R;
-import com.annamorgiel.popular_movies.app.App;
-import com.annamorgiel.popular_movies.rest.model.ApiResponse;
 import com.annamorgiel.popular_movies.rest.model.Movie;
-import com.squareup.picasso.Picasso;
-
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by Anna Morgiel on 13.04.2017.
@@ -35,8 +28,8 @@ public class DetailActivity extends AppCompatActivity {
         if (intentThatStartedThisActivity.hasExtra(Intent.EXTRA_TEXT)) {
             movieId = intentThatStartedThisActivity.getLongExtra("movieId", 1L);
         }
-        fetchMovieDetails(clickedItemId);
-        };
+        /*fetchMovieDetails(clickedItemId);
+        }
 
         private void fetchMovieDetails(final Long movieId){
             App.getRestClient().getMovieService().getMovieDetails(movieId, new Callback<ApiResponse>(){
@@ -54,7 +47,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onFailure(Call<ApiResponse> call, Throwable t) {
 
             }
-        });
+        }); */
     }
 }
 
