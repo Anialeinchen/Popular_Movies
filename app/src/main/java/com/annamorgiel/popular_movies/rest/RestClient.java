@@ -10,7 +10,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 
 public class RestClient {
-    private static final String BASE_URL = "http://api.themoviedb.org/3";
+    private static final String BASE_URL = "http://api.themoviedb.org/3/";
     private MovieService apiService;
 
 
@@ -22,7 +22,6 @@ public class RestClient {
 
         apiService = retrofit.create(MovieService.class);
     }
-
 
     public MovieService getMovieService()
     {

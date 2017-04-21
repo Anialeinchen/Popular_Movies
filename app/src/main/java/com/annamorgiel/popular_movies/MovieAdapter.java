@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.annamorgiel.popular_movies.rest.model.Movie;
-import com.squareup.picasso.Picasso;
 
 import java.util.Collection;
 import java.util.Iterator;
@@ -207,9 +206,9 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         ImageView gridItemPosterView;
         gridItemPosterView = (ImageView) holder.itemView.findViewById(R.id.poster_iv);
         Movie movie = movieList.get(position);
-        String moviePosterPath = movie.getPosterPath();
-        String url = "http://image.tmdb.org/t/p/w185/";
-        Picasso.with(holder.getContext()).load(url + moviePosterPath).into(gridItemPosterView);
+        //String moviePosterPath = movie.getPosterPath();
+        //String url = "http://image.tmdb.org/t/p/w185/";
+        //Picasso.with(holder.getContext()).load(url + moviePosterPath).into(gridItemPosterView);
     }
 
     @Override

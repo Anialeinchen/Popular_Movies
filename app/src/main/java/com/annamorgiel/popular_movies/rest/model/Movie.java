@@ -3,14 +3,11 @@ package com.annamorgiel.popular_movies.rest.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import org.parceler.Parcel;
-
 import java.util.List;
 
 /**
  * Created by Anna Morgiel on 19.04.2017.
  */
-@Parcel
 public class Movie {
 
     @SerializedName("poster_path")
@@ -167,5 +164,5 @@ public class Movie {
     public void setVoteAverage(Double voteAverage) {
         this.voteAverage = voteAverage;
     }
-}
 
+}

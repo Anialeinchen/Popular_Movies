@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Grid
     Context context = MainActivity.this;
     private MovieAdapter mAdapter;
     private RecyclerView mMoviesGrid;
-    private String POSTER_PATH = "http://image.tmdb.org/t/p/w185//";
+    private String POSTER_PATH = "http://image.tmdb.org/t/p/w185/";
     private ImageView movieposter = null;
     private TextView mErrorMessageDisplay;
 
@@ -55,19 +55,21 @@ public class MainActivity extends AppCompatActivity implements MovieAdapter.Grid
         mMoviesGrid.setLayoutManager(layoutManager);
 
         //mMoviesGrid.hasFixedSize(true);
-        mAdapter = new MovieAdapter(NUM_GRID_ITEM, this);
-
-
-        mMoviesGrid.setAdapter(mAdapter);
 
         movieposter = (ImageView) findViewById(R.id.poster_iv);
 
+        mAdapter = new MovieAdapter(NUM_GRID_ITEM, this);
+
+        mMoviesGrid.setAdapter(mAdapter);
+
         String defaultSortBy = "popular";
 
-        App.getRestClient().getMovieService().getMovies(defaultSortBy, apiKey, new Callback<ApiResponse>() {
+        Call<ApiResponse> call = App.getRestClient().getMovieService().getMovies(defaultSortBy, apiKey);
+
+        call.enqueue(new Callback<ApiResponse>() {
             @Override
             public void onResponse(Call<ApiResponse> call, Response<ApiResponse> response) {
-                if (!response.isSuccessful()) {
+                if (response.isSuccessful()) {
                     mLoadingIndicator.setVisibility(View.INVISIBLE);
                     showMovieDataView();
 
