@@ -1,14 +1,18 @@
 package com.annamorgiel.popular_movies.rest.model;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
+        import com.google.gson.annotations.Expose;
+        import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
+        import org.parceler.Parcel;
+
+        import java.util.ArrayList;
+        import java.util.List;
 
 /**
- * Created by Anna Morgiel on 19.04.2017.
+ * Created by Anna Morgiel on 23.04.2017.
  */
-public class Movie {
+@Parcel
+public class MovieObject {
 
     @SerializedName("poster_path")
     @Expose
@@ -24,7 +28,7 @@ public class Movie {
     private String releaseDate;
     @SerializedName("genre_ids")
     @Expose
-    private List<Integer> genreIds = null;
+    private List<Integer> genreIds =  new ArrayList<Integer>();
     @SerializedName("id")
     @Expose
     private Integer id;
@@ -164,5 +168,5 @@ public class Movie {
     public void setVoteAverage(Double voteAverage) {
         this.voteAverage = voteAverage;
     }
-
 }
+
