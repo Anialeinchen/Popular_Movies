@@ -18,7 +18,7 @@ public class ApiResponse {
         private Integer page;
         @SerializedName("movies")
         @Expose
-        private List<Movie> movies = null;
+        private List<MovieObject> movies = null;
         @SerializedName("total_results")
         @Expose
         private Integer totalResults;
@@ -34,11 +34,11 @@ public class ApiResponse {
             this.page = page;
         }
 
-        public List<Movie> getMovies() {
+        public List<MovieObject> getMovies() {
             return movies;
         }
 
-        public void setMovies(List<Movie> movies) {
+        public void setMovies(List<MovieObject> movies) {
             this.movies = movies;
         }
 

@@ -9,19 +9,19 @@ import com.annamorgiel.popular_movies.rest.RestClient;
  */
 
 public class App extends Application {
-    private static RestClient restClient;
+        private static RestClient restClient;
 
-    @Override
-    public void onCreate()
-    {
-        super.onCreate();
+        @Override
+        public void onCreate()
+        {
+            super.onCreate();
 
-        restClient = new RestClient();
-    }
+            restClient = new RestClient();
+        }
 
-    public static RestClient getRestClient()
-    {
-        return restClient;
-    }
+        public static RestClient getRestClient()
+        {
+            return restClient;
+        }
 
 }
